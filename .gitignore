@@ -1,0 +1,15 @@
+node_modules
+
+*~
+logs
+tmp
+*.log
+npm-debug.log*
+
+*.pem
+*.srl
+*.key
+*.crt
+*.csr
+
+.idea

@@ -1,0 +1,4 @@
+node_modules/*
+public/*
+app/dirname.mjs
+www/dist/*
