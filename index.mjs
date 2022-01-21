@@ -6,6 +6,7 @@ import https from 'https'
 import express from 'express'
 
 import __dirname from './dirname.mjs'
+import rndm from "rndm";
 
 // const { HTTP_PORT } = process.env
 // const { HTTP_HOST } = process.env
@@ -19,10 +20,14 @@ const HTTPS_HOST = '0.0.0.0' // "localhost" // 0.0.0.0 for all process.env //pro
 
 const app = express()
 
+const largeText = rndm(10 * 1024 * 1024 * 2)
+console.log(largeText.length)
+
 export async function start() {
   console.log('Starting initialization')
 
   app.get('/', (req, resp) => resp.send('Hello world!'))
+  app.get('/large', (req, resp) => resp.send(largeText))
 
   try {
     const httpServer = http.createServer(app)
